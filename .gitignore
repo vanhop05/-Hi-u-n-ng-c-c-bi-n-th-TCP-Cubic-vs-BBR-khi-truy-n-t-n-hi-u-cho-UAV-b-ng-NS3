@@ -1,0 +1,12 @@
+# Bo qua file nen NS-3 nang hang chuc MB
+*.tar.bz2
+*.zip
+*.tar.gz
+
+# Bo qua cac file thuc thi Windows
+*.exe
+*.obj
+*.o
+
+# Bo qua file Office tam
+~$*.docx
