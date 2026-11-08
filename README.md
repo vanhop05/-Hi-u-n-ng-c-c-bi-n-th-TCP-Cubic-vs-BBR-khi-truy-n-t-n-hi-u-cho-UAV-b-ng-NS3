@@ -1,4 +1,4 @@
-# Đồ án Lập Trình Mạng: Nghiên Cứu & Đánh Giá Hiệu Năng Các Biến Thể TCP (Cubic vs BBR) Trên Mô Phỏng NS-3
+# Nghiên Cứu & Đánh Giá Hiệu Năng Các Biến Thể TCP (Cubic vs BBR) Khi Truyền Tín Hiệu Cho UAV Trên Mô Phỏng NS-3
 
 > **Ứng dụng khảo sát bài toán truyền tin và truyền Video cho thiết bị bay không người lái (UAV / Drone)**  
 > **Công cụ mô phỏng:** Network Simulator 3 (ns-3.49) trên nền tảng Ubuntu Linux / WSL 2  
@@ -122,7 +122,7 @@ Tuy nhiên, kênh truyền vô tuyến không dây (Wi-Fi, 4G/5G) của UAV tron
 
 ---
 
-## 🎯 4. Kết Luận Đồ Án
+## 🎯 4. Kết Luận (Conclusions)
 
 1. **TCP Cubic không phù hợp cho mạng UAV:** Cơ chế *Loss-based* của Cubic nhầm lẫn giữa *suy hao vô tuyến/nhiễu sóng* với *nghẽn mạng*, dẫn đến việc tự bóp nghẽn lưu lượng, gây giật lag và mất kết nối camera. Đồng thời việc bơm phồng hàng đợi ($CWND = 92$) gây trễ điều khiển nghiêm trọng.
 2. **TCP BBR là lựa chọn tối ưu cho UAV:** Nhờ điều khiển luồng dựa trên $BtlBw$ và $RTprop$, BBR miễn nhiễm với tỷ lệ mất gói ngẫu nhiên lên tới 5%, duy trì thông lượng ổn định ở cự ly xa và kiểm soát độ trễ hàng đợi cực thấp.
@@ -152,6 +152,3 @@ python3 run_experiments.py
 # 4. Chạy mô phỏng Drone bay và xuất biểu đồ cự ly
 python3 run_uav_experiments.py
 ```
-
----
-*Tác giả đồ án: Sinh viên thực hiện môn Lập Trình Mạng*
