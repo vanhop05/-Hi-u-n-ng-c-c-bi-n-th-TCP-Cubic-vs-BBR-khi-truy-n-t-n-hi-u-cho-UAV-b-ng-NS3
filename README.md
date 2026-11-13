@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 1. Giới thiệu Đề tài & Đặt vấn đề
+##  1. Giới thiệu Đề tài & Đặt vấn đề
 
 Trong các hệ thống thiết bị bay không người lái (**UAV / Drone**), kết nối mạng giữa **Trạm điều khiển mặt đất (GCS)** và **Drone** đóng vai trò huyết mạch để truyền lệnh điều khiển (*Telemetry*) và truyền luồng hình ảnh/video độ phân giải cao (*Payload Camera Stream*).
 
@@ -21,7 +21,7 @@ Tuy nhiên, kênh truyền vô tuyến không dây (Wi-Fi, 4G/5G) của UAV tron
 
 ---
 
-## 🏗️ 2. Cấu trúc Thư mục Dự án
+##  2. Cấu trúc Thư mục Dự án
 
 ```text
 ├── tcp-comparison.cc           # Mã nguồn C++ kịch bản 1: Khảo sát lý thuyết (Băng thông, Độ trễ, Mất gói)
@@ -46,7 +46,7 @@ Tuy nhiên, kênh truyền vô tuyến không dây (Wi-Fi, 4G/5G) của UAV tron
 
 ---
 
-## 📊 3. Kết quả & Phân tích Thực nghiệm
+##  3. Kết quả & Phân tích Thực nghiệm
 
 ### Phần 1: Khảo sát Lý thuyết Đa yếu tố (`tcp-comparison.cc`)
 
@@ -122,14 +122,14 @@ Tuy nhiên, kênh truyền vô tuyến không dây (Wi-Fi, 4G/5G) của UAV tron
 
 ---
 
-## 🎯 4. Kết Luận (Conclusions)
+##  4. Kết Luận (Conclusions)
 
 1. **TCP Cubic không phù hợp cho mạng UAV:** Cơ chế *Loss-based* của Cubic nhầm lẫn giữa *suy hao vô tuyến/nhiễu sóng* với *nghẽn mạng*, dẫn đến việc tự bóp nghẽn lưu lượng, gây giật lag và mất kết nối camera. Đồng thời việc bơm phồng hàng đợi ($CWND = 92$) gây trễ điều khiển nghiêm trọng.
 2. **TCP BBR là lựa chọn tối ưu cho UAV:** Nhờ điều khiển luồng dựa trên $BtlBw$ và $RTprop$, BBR miễn nhiễm với tỷ lệ mất gói ngẫu nhiên lên tới 5%, duy trì thông lượng ổn định ở cự ly xa và kiểm soát độ trễ hàng đợi cực thấp.
 
 ---
 
-## 🚀 5. Hướng dẫn Chạy Lại Mô Phỏng (How to Reproduce)
+##  5. Hướng dẫn Chạy Lại Mô Phỏng (How to Reproduce)
 
 ### Yêu cầu hệ thống:
 * Hệ điều hành: Linux (Ubuntu 22.04 LTS / WSL 2 trên Windows)
